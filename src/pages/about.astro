@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<BaseLayout title="About | Sunbeam Consulting" description="Diana Pfeil — MIT PhD, ex-Amazon, 2x startup CTO. AI strategy and fractional leadership for early-stage startups.">
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-8">About Sunbeam Consulting</h1>
+
+      <div class="grid md:grid-cols-3 gap-12 items-start">
+        <!-- Photo placeholder -->
+        <div class="md:col-span-1">
+          <div class="aspect-square bg-slate-100 rounded-xl flex items-center justify-center text-slate-400 text-sm">
+            <img
+              src="/images/diana-placeholder.jpg"
+              alt="Diana Pfeil"
+              class="w-full h-full object-cover rounded-xl"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'text-slate-400 text-sm\'>Photo coming soon</span>'"
+            />
+          </div>
+        </div>
+
+        <!-- Story -->
+        <div class="md:col-span-2 space-y-6 text-slate-700 leading-relaxed">
+          <p class="text-lg">
+            I'm <strong class="text-slate-900">Diana Pfeil</strong> — MIT PhD, ex-Amazon engineer, and 2-time startup CTO.
+          </p>
+
+          <p>
+            I didn't set out to start a consulting practice — I just kept getting the same call.
+            Founders I knew were spinning their wheels trying to "do something with AI." They were
+            getting pressure from investors, hearing buzzwords from competitors, and watching their
+            teams build features that never launched.
+          </p>
+
+          <p>
+            And I got it — because I'd been there. As a 2-time CTO for AI startups, I've lived every
+            failure mode: vague roadmaps, endless experiments, strategy debt, and the growing tension
+            between ambition and reality. But I also knew what it felt like when things clicked — when
+            a team had the right direction, shipped with purpose, and built features customers actually
+            believed in.
+          </p>
+
+          <p>
+            That's what I wanted to help more teams do. So I built <strong class="text-slate-900">Sunbeam Consulting</strong>
+            to bring clarity, momentum, and a bit of fun to AI product work.
+          </p>
+
+          <p>
+            Because the truth is: AI isn't magic. But with the right focus and leadership, it can be transformative.
+          </p>
+        </div>
+      </div>
+
+      <!-- Credentials -->
+      <div class="mt-16 pt-12 border-t border-slate-200">
+        <h2 class="text-2xl font-bold text-slate-900 mb-8">Background</h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 rounded-full bg-sunbeam-400 mt-2 shrink-0"></div>
+            <div>
+              <p class="font-semibold text-slate-900">MIT PhD</p>
+              <p class="text-sm text-slate-600">Machine learning and computational research</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 rounded-full bg-sunbeam-400 mt-2 shrink-0"></div>
+            <div>
+              <p class="font-semibold text-slate-900">Ex-Amazon</p>
+              <p class="text-sm text-slate-600">Recommendation systems engineer</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 rounded-full bg-sunbeam-400 mt-2 shrink-0"></div>
+            <div>
+              <p class="font-semibold text-slate-900">2x Startup CTO</p>
+              <p class="text-sm text-slate-600">B2B AI product companies, teams up to 75 engineers</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 rounded-full bg-sunbeam-400 mt-2 shrink-0"></div>
+            <div>
+              <p class="font-semibold text-slate-900">20+ Years in ML</p>
+              <p class="text-sm text-slate-600">From recommendation systems to GenAI and LLMs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What it's like -->
+      <div class="mt-16 pt-12 border-t border-slate-200">
+        <h2 class="text-2xl font-bold text-slate-900 mb-6">What It's Like to Work With Me</h2>
+        <div class="space-y-4 text-slate-700">
+          <p>
+            I'm friendly, humble, and non-jargony. I'm the opposite of a technical partner who
+            doesn't have patience to explain things or communicate effectively.
+          </p>
+          <p>
+            I'm encouraging and at the same time set high standards — and help everyone get there.
+            Clients trust me to execute and come back with exactly what they expected, done at a high level.
+          </p>
+          <p>
+            I bring clarity, momentum, and get-after-it energy — so your AI work delivers value your
+            board, investors, and customers can see.
+          </p>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="mt-12 flex flex-wrap gap-4">
+        <a
+          href="https://www.linkedin.com/in/dianapfeil/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sunbeam-600 hover:text-sunbeam-700 font-semibold text-sm"
+        >
+          LinkedIn &rarr;
+        </a>
+        <a
+          href="https://dianam.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sunbeam-600 hover:text-sunbeam-700 font-semibold text-sm"
+        >
+          Personal Site &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

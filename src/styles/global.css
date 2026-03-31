@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  /* Sunbeam amber palette */
+  --color-sunbeam-50: #fffbeb;
+  --color-sunbeam-100: #fef3c7;
+  --color-sunbeam-200: #fde68a;
+  --color-sunbeam-300: #fcd34d;
+  --color-sunbeam-400: #fbbf24;
+  --color-sunbeam-500: #f59e0b;
+  --color-sunbeam-600: #d97706;
+  --color-sunbeam-700: #b45309;
+  --color-sunbeam-800: #92400e;
+  --color-sunbeam-900: #78350f;
+
+  /* Font family */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Prose styling for blog posts */
+.prose h1 { @apply text-3xl font-bold mb-6 text-slate-900; }
+.prose h2 { @apply text-2xl font-bold mt-10 mb-4 text-slate-900; }
+.prose h3 { @apply text-xl font-semibold mt-8 mb-3 text-slate-900; }
+.prose p { @apply mb-4 leading-relaxed text-slate-700; }
+.prose ul { @apply list-disc pl-6 mb-4 text-slate-700; }
+.prose ol { @apply list-decimal pl-6 mb-4 text-slate-700; }
+.prose li { @apply mb-2; }
+.prose blockquote { @apply border-l-4 border-sunbeam-400 pl-4 italic text-slate-600 my-6; }
+.prose a { @apply text-sunbeam-700 underline hover:text-sunbeam-500; }
+.prose strong { @apply font-semibold text-slate-900; }
+.prose img { @apply rounded-lg my-6 mx-auto max-w-full; }
+.prose code { @apply bg-slate-100 text-sm px-1.5 py-0.5 rounded; }
+.prose pre { @apply bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto my-6; }
+.prose pre code { @apply bg-transparent p-0; }

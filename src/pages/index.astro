@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CredentialStrip from '../components/CredentialStrip.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import CTASection from '../components/CTASection.astro';
+import BlogPostCard from '../components/BlogPostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const latestPosts = allPosts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout title="Sunbeam Consulting — AI Strategy for Early-Stage Startups">
+  <Hero />
+  <CredentialStrip />
+
+  <!-- Who I Help -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">Who I Work With</h2>
+      <p class="text-lg text-slate-600 text-center max-w-2xl mx-auto mb-12">
+        I partner best with Seed to Series B startups in B2B SaaS and healthtech — founders
+        and CTOs seeking clear, confident AI direction.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="p-6">
+          <div class="text-3xl mb-3">🚀</div>
+          <h3 class="font-semibold text-slate-900 mb-2">Seed – Series B Startups</h3>
+          <p class="text-slate-600 text-sm">Early-stage companies ready to build their AI strategy and ship features that matter.</p>
+        </div>
+        <div class="p-6">
+          <div class="text-3xl mb-3">💼</div>
+          <h3 class="font-semibold text-slate-900 mb-2">B2B SaaS</h3>
+          <p class="text-slate-600 text-sm">Product teams adding GenAI and ML capabilities to drive customer value and differentiation.</p>
+        </div>
+        <div class="p-6">
+          <div class="text-3xl mb-3">🏥</div>
+          <h3 class="font-semibold text-slate-900 mb-2">Healthtech</h3>
+          <p class="text-slate-600 text-sm">Mission-driven companies using AI to improve outcomes while navigating compliance and trust.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services preview -->
+  <section class="py-16 md:py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">How I Help</h2>
+      <p class="text-lg text-slate-600 text-center max-w-2xl mx-auto mb-12">
+        Two focused offerings designed to give you clarity, momentum, and results.
+      </p>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <ServiceCard
+          title="Fractional Head of AI"
+          description="AI leadership without the full-time cost. I become your strategic partner to sharpen your roadmap, oversee delivery, and build investor confidence."
+          price="$8–12K/month"
+        />
+        <ServiceCard
+          title="AI Strategy Sprint"
+          description="Build your AI direction, fast. A 2–3 week deep-dive to define your GenAI vision, roadmap, and a compelling investor narrative."
+          price="$12K flat fee"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- From the blog -->
+  {latestPosts.length > 0 && (
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">From the Blog</h2>
+        <p class="text-lg text-slate-600 text-center max-w-2xl mx-auto mb-12">
+          Practical thinking on building AI products that work.
+        </p>
+        <div class="grid md:grid-cols-3 gap-8">
+          {latestPosts.map((post) => (
+            <BlogPostCard
+              title={post.data.title}
+              date={post.data.date}
+              description={post.data.description}
+              slug={post.id}
+            />
+          ))}
+        </div>
+        <div class="text-center mt-10">
+          <a href="/blog" class="text-sunbeam-600 hover:text-sunbeam-700 font-semibold">
+            View all posts &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <CTASection />
+</BaseLayout>

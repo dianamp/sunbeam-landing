@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sunbeamconsulting.com/sitemap-index.xml
