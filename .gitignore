@@ -29,3 +29,4 @@ pnpm-debug.log*
 
 # raw background docs (docx/pdf source files)
 backgound/
+/.playwright-mcp

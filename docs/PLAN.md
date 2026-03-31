@@ -12,10 +12,15 @@ See the full plan in the project's Claude conversation history.
 - [x] Session 6: GitHub Pages deployment workflow
 
 ## Remaining TODOs
-- [ ] Replace Calendly placeholder URL in contact page
-- [ ] Replace Formspree placeholder ID in contact form
-- [ ] Add Diana's photo (replace placeholder in about page)
-- [ ] Register custom domain and update `astro.config.mjs` site URL
-- [ ] Add Google Analytics
-- [ ] Copy any additional blog images as needed
-- [ ] Create GitHub repo and push
+
+### Before Launch
+- [x] **Reclaim.ai link** — integrated in `src/pages/contact.astro`
+- [x] **Formspree ID** — integrated in `src/components/ContactForm.astro`
+- [ ] **Photo** — drop your headshot at `public/images/diana-headshot.jpg` (the about page picks it up automatically)
+- [ ] **Enable GitHub Pages** — in repo Settings > Pages, set source to "GitHub Actions"
+
+### Post-Launch
+- [ ] **Custom domain** — register domain, add CNAME record, put a `CNAME` file in `public/`, update `site` in `astro.config.mjs`
+- [ ] **Google Analytics** — add GA snippet to `src/layouts/BaseLayout.astro` `<head>`
+- [ ] **Review blog posts** — spot-check migrated posts for formatting, especially posts with images
+- [ ] **LinkedIn links** — verify the LinkedIn company page URL in `src/components/Footer.astro` and personal LinkedIn in `src/pages/about.astro`
