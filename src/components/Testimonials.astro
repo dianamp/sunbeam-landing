@@ -1,0 +1,46 @@
+---
+const testimonials = [
+  {
+    quote: "Diana helped us go from 'we should probably do something with AI' to a clear roadmap and our first ML feature in production. She cut through the hype and focused us on what would actually move the needle.",
+    name: "Placeholder 1",
+    title: "CEO, Company Name",
+  },
+  {
+    quote: "We brought Diana in before our Series A. She shaped our AI narrative, prepped us for technical due diligence, and gave our investors real confidence. We closed the round in three weeks.",
+    name: "Placeholder 2",
+    title: "Co-founder & CTO, Company Name",
+  },
+  {
+    quote: "Our engineering team was spinning on three different AI initiatives with no clear priority. Diana came in, killed two of them, and got the right one shipped in six weeks. Best money we've spent.",
+    name: "Placeholder 3",
+    title: "VP Engineering, Company Name",
+  },
+  {
+    quote: "I was skeptical about bringing in a fractional AI lead, but Diana embedded with our team like she'd been here from day one. She made our ML pipeline dramatically simpler and our roadmap actually achievable.",
+    name: "Placeholder 4",
+    title: "CTO, Company Name",
+  },
+];
+---
+
+<section class="py-16 md:py-24 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">What Clients Say</h2>
+    <p class="text-lg text-slate-600 text-center max-w-2xl mx-auto mb-12">
+      Founders and technical leaders I've worked with.
+    </p>
+    <div class="grid md:grid-cols-2 gap-8">
+      {testimonials.map((t) => (
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-slate-100">
+          <blockquote class="text-slate-700 leading-relaxed mb-6">
+            &ldquo;{t.quote}&rdquo;
+          </blockquote>
+          <div>
+            <p class="font-semibold text-slate-900">{t.name}</p>
+            <p class="text-sm text-slate-500">{t.title}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

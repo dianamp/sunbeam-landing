@@ -4,6 +4,7 @@ import Hero from '../components/Hero.astro';
 import CredentialStrip from '../components/CredentialStrip.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import CTASection from '../components/CTASection.astro';
+import Testimonials from '../components/Testimonials.astro';
 import BlogPostCard from '../components/BlogPostCard.astro';
 import { getCollection } from 'astro:content';
 
@@ -51,9 +52,9 @@ const latestPosts = allPosts
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">How I Help</h2>
       <p class="text-lg text-slate-600 text-center max-w-2xl mx-auto mb-12">
-        Two focused offerings designed to give you clarity, momentum, and results.
+        Three focused offerings designed to give you clarity, momentum, and results.
       </p>
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <ServiceCard
           title="Fractional Head of AI"
           description="AI leadership without the full-time cost. I become your strategic partner to sharpen your roadmap, oversee delivery, and build investor confidence."
@@ -64,9 +65,16 @@ const latestPosts = allPosts
           description="Build your AI direction, fast. A 2–3 week deep-dive to define your GenAI vision, roadmap, and a compelling investor narrative."
           price="$12K flat fee"
         />
+        <ServiceCard
+          title="Executive Coaching for CTOs"
+          description="Tactical, 1-on-1 advising for technical leaders. I help you troubleshoot your biggest headaches with leadership tools, hard-won lessons, and mindset work."
+          price="Limited openings"
+        />
       </div>
     </div>
   </section>
+
+  <Testimonials />
 
   <!-- From the blog -->
   {latestPosts.length > 0 && (
