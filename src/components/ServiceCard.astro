@@ -2,20 +2,20 @@
 interface Props {
   title: string;
   description: string;
-  price: string;
+  price?: string;
   href?: string;
 }
 
 const { title, description, price, href = '/services' } = Astro.props;
 ---
 
-<div class="bg-white border border-slate-200 rounded-xl p-8 hover:shadow-lg transition-shadow">
+<div class="bg-white border border-slate-200 rounded-xl p-8 hover:shadow-lg transition-shadow flex flex-col h-full">
   <h3 class="text-xl font-bold text-slate-900 mb-3">{title}</h3>
   <p class="text-slate-600 mb-4 leading-relaxed">{description}</p>
-  <p class="text-sunbeam-700 font-semibold mb-6">{price}</p>
+  {price && <p class="text-sunbeam-700 font-semibold mb-6">{price}</p>}
   <a
     href={href}
-    class="text-sm font-semibold text-sunbeam-600 hover:text-sunbeam-700 transition-colors"
+    class="text-sm font-semibold text-sunbeam-600 hover:text-sunbeam-700 transition-colors mt-auto"
   >
     Learn more &rarr;
   </a>
