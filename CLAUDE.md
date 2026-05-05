@@ -25,7 +25,7 @@ Static marketing site for Sunbeam Consulting. Astro v6 + Tailwind v4 + MDX, depl
 
 **Styling.** Tailwind v4 is wired through the Vite plugin (`@tailwindcss/vite` in `astro.config.mjs`), not a PostCSS config. The theme is defined inline in `src/styles/global.css` under `@theme { ... }` — this is where the custom `sunbeam-*` amber palette and the `Inter` font family live. To add a new color/token, edit that block. Blog post prose styles (`.prose h1`, etc.) are also in `global.css` and use `@apply`.
 
-**Site config.** `astro.config.mjs` sets `site: 'https://sunbeamconsulting.com'` (used for canonical URLs, sitemap, OG tags) and registers the `sitemap()` and `mdx()` integrations. If the production domain changes, update `site` here.
+**Site config.** `astro.config.mjs` sets `site: 'https://sunbeams.ai'` (used for canonical URLs, sitemap, OG tags) and registers the `sitemap()` and `mdx()` integrations. The custom domain is also pinned via `public/CNAME` (copied to `dist/CNAME` at build, read by GitHub Pages). If the production domain changes, update both.
 
 **Deployment.** `.github/workflows/deploy.yml` builds on push to `main` and publishes `./dist` via `actions/deploy-pages@v4`. No staging environment.
 

@@ -6,7 +6,7 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://sunbeamconsulting.com',
+  site: 'https://sunbeams.ai',
   integrations: [sitemap(), mdx()],
   vite: {
     plugins: [tailwindcss()],
