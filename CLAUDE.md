@@ -29,7 +29,7 @@ Static marketing site for Sunbeam Consulting. Astro v6 + Tailwind v4 + MDX, depl
 
 **Deployment.** `.github/workflows/deploy.yml` builds on push to `main` and publishes `./dist` via `actions/deploy-pages@v4`. No staging environment.
 
-**Third-party integrations.** Calendly link in `src/pages/contact.astro`, Formspree form action in `src/components/ContactForm.astro`. These are hardcoded — change them in those files.
+**Third-party integrations.** Reclaim.ai scheduling link in `src/pages/contact.astro`, Formspree form action in `src/components/ContactForm.astro`. These are hardcoded, change them in those files.
 
 ## Conventions
 
