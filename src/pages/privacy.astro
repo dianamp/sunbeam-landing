@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const effectiveDate = 'June 15, 2026';
+---
+
+<BaseLayout
+  title="Privacy Policy | Sunbeam Consulting"
+  description="How Sunbeam Consulting handles data and privacy on this website."
+>
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Privacy Policy</h1>
+      <p class="text-sm text-slate-500 mb-10">Effective {effectiveDate}</p>
+
+      <div class="space-y-8 text-slate-700 leading-relaxed">
+        <p class="text-lg">
+          This policy explains what information Sunbeam Consulting collects when you
+          visit this website, how it is used, and the third parties involved. Sunbeam
+          Consulting is a solo AI strategy and fractional leadership practice run by
+          Diana Pfeil. If you have any questions, email
+          <a href="mailto:diana@sunbeams.ai" class="text-sunbeam-700 hover:text-sunbeam-500 underline">diana@sunbeams.ai</a>.
+        </p>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-3">Analytics (no cookies)</h2>
+          <p>
+            This site uses Cloudflare Web Analytics to understand basic, aggregate
+            traffic patterns such as page views, referring sites, and general
+            location and device type. Cloudflare Web Analytics does not use cookies,
+            does not fingerprint visitors, and does not build profiles of individual
+            people or track you across other websites. The data is anonymous and
+            aggregated.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-3">Contact form</h2>
+          <p>
+            If you submit the contact form, your message and the details you provide
+            (such as your name and email address) are delivered to us through
+            Formspree, a form-handling service. We use this information only to
+            respond to your inquiry. Formspree processes the submission on our
+            behalf; see Formspree's own privacy policy for details on their handling.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-3">Scheduling</h2>
+          <p>
+            Our contact page links to a scheduling tool provided by Reclaim.ai. If
+            you book a call, any information you enter is handled by Reclaim.ai under
+            their privacy policy. We use it only to schedule and prepare for our
+            conversation.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-3">Fonts</h2>
+          <p>
+            This site loads the Inter typeface from Google Fonts. When your browser
+            requests the font files, your IP address is shared with Google as part of
+            that request. We do not use Google Fonts for tracking.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-3">Hosting</h2>
+          <p>
+            This site is hosted on GitHub Pages. Like most web hosts, GitHub may keep
+            standard server logs (including IP addresses) for security and
+            operational purposes under GitHub's privacy practices.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-3">What we do not do</h2>
+          <p>
+            We do not use advertising cookies, we do not run third-party ad networks,
+            and we do not sell or share your personal information for advertising. We
+            collect only what is described above.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-3">Your choices and contact</h2>
+          <p>
+            If you would like to ask about, access, or delete any information you have
+            shared with us (for example, a contact form submission), email
+            <a href="mailto:diana@sunbeams.ai" class="text-sunbeam-700 hover:text-sunbeam-500 underline">diana@sunbeams.ai</a>
+            and we will respond. We may update this policy from time to time; the
+            effective date above reflects the latest version.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
