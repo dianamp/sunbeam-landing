@@ -7,6 +7,8 @@ tags: ["AI"]
 
 Day 1 of AI Dev left me feeling inspired. The content quality was super high, I met a few new friends, and I wrote down a bunch of ideas I'm excited to explore.
 
+<img src="/images/blog/2026-ai-dev.jpg" alt="My AI Dev 26 SF attendee badge: Diana Pfeil, Founder, Sunbeam Consulting" style="width: 66%; display: block; margin: 1.5rem auto;" />
+
 Two big themes came through across the talks.
 
 ## 1. Harness engineering is everywhere
