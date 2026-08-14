@@ -1,5 +1,5 @@
 ---
-title: "My favorite technical writer"
+title: "Sebastian Raschka is a gift"
 description: "Why I make time to work through a whole technical book with a reading group."
 date: 2026-07-31
 tags: ["reading", "LLM"]
