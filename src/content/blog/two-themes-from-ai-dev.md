@@ -3,6 +3,12 @@ title: "Two themes from AI Dev"
 description: "My takeaways from the AI Dev Conference in San Francisco"
 date: 2026-05-28
 tags: ["AI"]
+highlight: true
+highlightKicker: "Talk & takeaways"
+highlightImage: "/images/blog/2026-ai-dev.jpg"
+highlightImageAlt: "My AI Dev 26 SF attendee badge: Diana Pfeil, Founder, Sunbeam Consulting"
+highlightExcerpt: "My takeaways from the AI Dev Conference in San Francisco."
+highlightRank: 3
 ---
 
 Day 1 of AI Dev left me feeling inspired. The content quality was super high, I met a few new friends, and I wrote down a bunch of ideas I'm excited to explore.

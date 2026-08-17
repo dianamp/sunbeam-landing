@@ -1,0 +1,64 @@
+---
+interface Props {
+  title: string;
+  slug: string;
+  excerpt: string;
+  kicker?: string;
+  image?: string;
+  imageAlt?: string;
+  /** 'horizontal' is the single-card variant: image left, text vertically centered. */
+  layout?: 'vertical' | 'horizontal';
+}
+
+const { title, slug, excerpt, kicker, image, imageAlt, layout = 'vertical' } = Astro.props;
+
+// An image with no alt is not permitted here, so drop it rather than ship a
+// decorative highlight image. src/lib/highlights.ts warns about this at build time.
+const showImage = Boolean(image && imageAlt);
+const horizontal = layout === 'horizontal';
+
+const cardClass = [
+  'group flex h-full flex-col overflow-hidden rounded-[10px] border border-highlight-card bg-white',
+  'transition-[border-color,box-shadow] duration-150 ease-out',
+  'hover:border-highlight-card-hover hover:shadow-[0_2px_8px_rgba(15,23,42,0.06)]',
+  'focus-visible:border-highlight-card-hover focus-visible:shadow-[0_2px_8px_rgba(15,23,42,0.06)]',
+  'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sunbeam-600',
+  horizontal && 'md:flex-row md:items-center',
+]
+  .filter(Boolean)
+  .join(' ');
+
+// 180px on mobile, 150px from sm up. The horizontal variant pins the image to a
+// 380px column at 3:2 (253px), which is what drives the card's height.
+const imageClass = horizontal
+  ? 'block h-[180px] w-full shrink-0 object-cover object-center sm:h-[150px] md:h-[253px] md:w-[380px]'
+  : 'block h-[180px] w-full shrink-0 object-cover object-center sm:h-[150px]';
+---
+
+<article class="h-full">
+  <a href={`/blog/${slug}`} class={cardClass}>
+    {
+      showImage && (
+        <img
+          src={image}
+          alt={imageAlt}
+          class={imageClass}
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      )
+    }
+    <div class:list={['px-[22px] pt-5 pb-6', horizontal && 'md:py-6']}>
+      {
+        kicker && (
+          <p class="mb-[10px] text-[10px] font-semibold tracking-[0.12em] text-highlight-kicker uppercase">
+            {kicker}
+          </p>
+        )
+      }
+      <h3 class="text-[19px] leading-[1.3] font-bold text-slate-900">{title}</h3>
+      <p class="mt-[9px] line-clamp-3 text-[13.5px] leading-[1.6] text-highlight-body">{excerpt}</p>
+    </div>
+  </a>
+</article>

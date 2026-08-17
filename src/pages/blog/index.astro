@@ -1,19 +1,33 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPostCard from '../../components/BlogPostCard.astro';
+import BlogHighlights from '../../components/BlogHighlights.astro';
 import { getCollection } from 'astro:content';
+import { getHighlights } from '../../lib/highlights';
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Additive: highlighted posts also stay in the chronological grid below, in their
+// normal date position with no extra treatment.
+const highlights = await getHighlights();
 ---
 
 <BaseLayout title="Blog | Sunbeam Consulting" description="Practical thinking on AI strategy, ML product development, and building AI features that work.">
-  <section class="py-16 md:py-24">
+  <div class="py-16 md:py-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Blog</h1>
-      <p class="text-lg text-slate-600 mb-12 max-w-2xl">
+      <p class="text-lg text-slate-600 max-w-2xl">
         Practical thinking on AI strategy, ML product development, and building AI features that actually work.
       </p>
+    </div>
+
+    <BlogHighlights posts={highlights} totalPosts={sortedPosts.length} />
+
+    <div class:list={['max-w-6xl mx-auto px-4 sm:px-6 lg:px-8', highlights.length > 0 ? 'mt-11' : 'mt-12']}>
+      {highlights.length > 0 && (
+        <h2 class="mb-5 text-[11px] font-semibold tracking-[0.14em] text-slate-400 uppercase">Recent</h2>
+      )}
 
       {sortedPosts.length > 0 ? (
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -30,5 +44,5 @@ const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
         <p class="text-slate-500">Posts coming soon.</p>
       )}
     </div>
-  </section>
+  </div>
 </BaseLayout>

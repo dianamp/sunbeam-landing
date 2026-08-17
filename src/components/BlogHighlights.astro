@@ -1,0 +1,59 @@
+---
+import HighlightCard from './HighlightCard.astro';
+import { highlightExcerpt, type BlogPost } from '../lib/highlights';
+
+interface Props {
+  posts: BlogPost[];
+  /** Total published posts, for the "3 of N posts" count. */
+  totalPosts: number;
+}
+
+const { posts, totalPosts } = Astro.props;
+
+const single = posts.length === 1;
+
+// 1 card: full width, horizontal. 2 cards: halves. 3: thirds.
+const gridClass = single
+  ? 'grid gap-[22px]'
+  : posts.length === 2
+    ? 'grid gap-[22px] sm:grid-cols-2'
+    : 'grid gap-[22px] sm:grid-cols-2 lg:grid-cols-3';
+---
+
+{
+  posts.length > 0 && (
+    <section
+      aria-labelledby="highlights-heading"
+      class="mt-10 border-y border-highlight-edge bg-highlight-band pt-[38px] pb-[42px]"
+    >
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-6 flex items-center">
+          <h2
+            id="highlights-heading"
+            class="text-[11px] font-semibold tracking-[0.16em] text-slate-900 uppercase"
+          >
+            Highlights
+          </h2>
+          <span class="ml-[14px] h-[3px] w-7 rounded-full bg-highlight-rule" aria-hidden="true" />
+          <span class="ml-auto text-xs font-medium text-highlight-meta">
+            {posts.length} of {totalPosts} posts
+          </span>
+        </div>
+
+        <div class={gridClass}>
+          {posts.map((post) => (
+            <HighlightCard
+              title={post.data.title}
+              slug={post.id}
+              excerpt={highlightExcerpt(post)}
+              kicker={post.data.highlightKicker}
+              image={post.data.highlightImage}
+              imageAlt={post.data.highlightImageAlt}
+              layout={single ? 'horizontal' : 'vertical'}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

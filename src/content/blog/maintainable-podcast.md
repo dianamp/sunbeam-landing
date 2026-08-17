@@ -3,6 +3,12 @@ title: "Sharing my Maintainable Software Podcast episode!"
 description: "I joined Robby Russell to talk about what makes maintaining AI and ML systems different from traditional software."
 date: 2026-08-07
 tags: ["AI", "ML"]
+highlight: true
+highlightKicker: "Podcast guest"
+highlightImage: "/images/blog/2026-maintainable-podcast.jpeg"
+highlightImageAlt: "Quote card from the episode: It's not just about the code. The maintainability of software is also a function of the data, and also the model."
+highlightExcerpt: "I joined Robby Russell to talk about maintaining AI and ML systems."
+highlightRank: 2
 ---
 
 I joined Robby Russell on the [Maintainable Software Podcast](https://maintainable.fm/episodes/diana-pfeil-building-confidence-in-probabilistic-systems) recently, for a conversation about what it actually takes to maintain AI products!

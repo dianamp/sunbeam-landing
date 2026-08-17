@@ -3,6 +3,11 @@ title: "Co-authored a study on postpartum health"
 description: "Published in JMIR Formative Research."
 date: 2026-07-24
 tags: ["ML"]
+highlight: true
+highlightKicker: "Published research"
+highlightImage: "/images/blog/2026-postpartum-health-study.png"
+highlightImageAlt: "Title page of the JMIR Formative Research paper on early risk identification among postpartum women"
+highlightRank: 1
 ---
 
 Postpartum is a period when so many women struggle, and so few are being watched for risk or supported appropriately.

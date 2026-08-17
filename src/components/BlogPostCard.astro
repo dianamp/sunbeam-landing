@@ -1,22 +1,23 @@
 ---
+import { formatPostDate, isoDate } from '../lib/date';
+
 interface Props {
   title: string;
   date: Date;
   description: string;
   slug: string;
+  /** Set only on the homepage strip's highlighted posts. */
+  kicker?: string;
 }
 
-const { title, date, description, slug } = Astro.props;
-
-const formattedDate = date.toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+const { title, date, description, slug, kicker } = Astro.props;
 ---
 
 <article class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
-  <time class="text-xs text-slate-500 font-medium uppercase tracking-wide">{formattedDate}</time>
+  <time datetime={isoDate(date)} class="text-xs text-slate-500 font-medium uppercase tracking-wide">{formatPostDate(date)}</time>
+  {kicker && (
+    <p class="mt-2 text-[10px] font-semibold tracking-[0.12em] text-highlight-kicker uppercase">{kicker}</p>
+  )}
   <h3 class="text-lg font-bold text-slate-900 mt-2 mb-2">
     <a href={`/blog/${slug}`} class="hover:text-sunbeam-600 transition-colors">{title}</a>
   </h3>

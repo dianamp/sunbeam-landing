@@ -6,12 +6,11 @@ import ServiceCard from '../components/ServiceCard.astro';
 import CTASection from '../components/CTASection.astro';
 import Testimonials from '../components/Testimonials.astro';
 import BlogPostCard from '../components/BlogPostCard.astro';
-import { getCollection } from 'astro:content';
+import { getStripPosts } from '../lib/highlights';
 
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const latestPosts = allPosts
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
+// Same top-3 highlights as the blog index band, backfilled with recent posts so
+// the strip always fills. Layout and card design are unchanged: data source only.
+const stripPosts = await getStripPosts(3);
 ---
 
 <BaseLayout title="Sunbeam Consulting | AI Strategy and Execution for Startups">
@@ -69,7 +68,7 @@ const latestPosts = allPosts
   <Testimonials />
 
   <!-- From the blog -->
-  {latestPosts.length > 0 && (
+  {stripPosts.length > 0 && (
     <section class="py-12 md:py-16 bg-slate-50">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">From the Blog</h2>
@@ -77,12 +76,13 @@ const latestPosts = allPosts
           Practical thinking on building AI products that work.
         </p>
         <div class="grid md:grid-cols-3 gap-8">
-          {latestPosts.map((post) => (
+          {stripPosts.map(({ post, isHighlight }) => (
             <BlogPostCard
               title={post.data.title}
               date={post.data.date}
-              description={post.data.description}
+              description={isHighlight ? (post.data.highlightExcerpt ?? post.data.description) : post.data.description}
               slug={post.id}
+              kicker={isHighlight ? post.data.highlightKicker : undefined}
             />
           ))}
         </div>
