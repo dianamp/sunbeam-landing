@@ -8,6 +8,9 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   site: 'https://sunbeams.ai',
   integrations: [sitemap(), mdx()],
+  markdown: {
+    shikiConfig: { theme: 'github-light' },
+  },
   vite: {
     plugins: [tailwindcss()],
   },
