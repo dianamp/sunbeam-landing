@@ -1,5 +1,5 @@
 ---
-title: "Testing Jev as an LLM judge"
+title: "Evaluating Jev as an LLM judge"
 description: "On one judge I was tuning, Jev roughly tied gpt-5-mini at 1/50th the cost. But it still needs a threshold and labeled data to make good decisions."
 date: 2026-09-29
 tags: ["AI", "LLM", "evals"]
