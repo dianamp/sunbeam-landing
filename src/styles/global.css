@@ -44,3 +44,8 @@
 .prose code { @apply bg-slate-100 text-sm px-1.5 py-0.5 rounded; }
 .prose pre { @apply border border-slate-200 text-sm p-4 rounded-lg overflow-x-auto my-6; background-color: var(--color-slate-50) !important; }
 .prose pre code { @apply bg-transparent p-0; }
+.prose table { @apply block w-full overflow-x-auto my-6 text-sm border-collapse; }
+.prose thead { @apply border-b-2 border-slate-300; }
+.prose th { @apply px-3 py-2 font-semibold text-slate-900 text-left align-bottom; }
+.prose td { @apply px-3 py-2 text-slate-700 border-b border-slate-200 whitespace-nowrap tabular-nums; }
+.prose tbody tr:nth-child(even) { @apply bg-slate-50; }
