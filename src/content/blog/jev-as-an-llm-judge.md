@@ -76,7 +76,7 @@ My experiment showed exactly this. Across the cutoffs I tried, the same Jev call
 
 I think this kind of work, deciding what threshold a decision model should operate at (AKA, only use the decision if probability is above 0.8, say) and calibrating its probabilities, is going to be a big area of activity.
 
-So: I'd use Jev for scored decisions at scale, as long as I have labeled data to pick and check the threshold.
+So: I'd use Jev for scored decisions at scale, as long as I have labeled data to pick and check the threshold. And as long as I trust a "product" that is 2 weeks old to be reliable :)
 
 ---
 
